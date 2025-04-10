@@ -1,0 +1,54 @@
+.container {
+  padding: 20px;
+}
+
+.form-section {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.form-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #495057;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-control {
+  padding-right: 40px; /* Space for the icon */
+}
+
+.input-group {
+  position: relative;
+
+}
+.img-thumbnail {
+  border: 3px solid #ff7b00;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 1rem;
+  max-width: 100%;
+  height: auto;
+
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #0a39e9;
+  font-size: 1.2rem;
+  margin-left: 3px;
+}

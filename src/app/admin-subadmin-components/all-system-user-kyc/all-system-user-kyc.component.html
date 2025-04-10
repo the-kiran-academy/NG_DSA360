@@ -1,0 +1,47 @@
+<div class="card">
+  <div class="card-body">
+    <!-- title -->
+    <h4 class="card-title">All DSA Applications</h4>
+
+    <!-- title -->
+    <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+      <table id="tbl"  class="table table-striped align-middle" >
+        <thead>
+          <tr>
+            <th class="text-dark font-medium fs-4">Name</th>
+            <th class="text-dark font-medium fs-4">Approval Status</th>
+            <th class="text-dark font-medium fs-4">KYC ID</th>
+            <th class="text-dark font-medium fs-4">DSA ID</th>
+            <th class="text-dark font-medium fs-4">Action</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let kyc of dsaKycs">
+            <td>
+              <div class="d-flex align-items-center">
+                <div class="ms-3">
+                  <h5 class="mb-0 font-medium">
+                    {{ kyc.dsaApplicationId.firstName }} {{ kyc.dsaApplicationId.lastName }}
+                  </h5>
+                  <span>{{  kyc.dsaApplicationId.emailAddress }}</span>
+                </div>
+              </div>
+            </td>
+            <td>{{ kyc.approvalStatus }}</td>
+            <td>{{  kyc.dsaKycId}}</td>
+            <td>{{  kyc.dsaApplicationId.dsaApplicationId }}</td>
+
+
+
+            <td>
+              <button class="btn btn-primary" (click)="retrieveKyc(kyc.dsaApplicationId.dsaApplicationId)">
+                <i class="bi bi-search"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="61" height="61" viewBox="0 0 61 61">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#6c87fc"/>
+      <stop offset="1" stop-color="#425cfa"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#3a98c2"/>
+      <stop offset="1" stop-color="#5dd3ff"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <circle id="Ellipse_233" data-name="Ellipse 233" cx="28.5" cy="28.5" r="28.5" transform="translate(0.072 -0.452)" fill="url(#linear-gradient)"/>
+    </clipPath>
+  </defs>
+  <g id="Group_7164" data-name="Group 7164" transform="translate(-89 -250)">
+    <g id="Group_7154" data-name="Group 7154" transform="translate(89.293 250)">
+      <circle id="Ellipse_232" data-name="Ellipse 232" cx="30.5" cy="30.5" r="30.5" transform="translate(-0.292)" fill="url(#linear-gradient-2)"/>
+      <g id="Mask_Group_54" data-name="Mask Group 54" transform="translate(1.635 2.452)" opacity="0.11" clip-path="url(#clip-path)">
+        <path id="Union_17" data-name="Union 17" d="M31.409,46.27,14.86,62.818,0,47.958,16.548,31.409,0,14.861,14.86,0,31.409,16.549,47.958,0,62.819,14.861,46.27,31.409,62.819,47.958,47.958,62.818Z" transform="translate(-2.758 -3.424)" fill="#fff"/>
+      </g>
+    </g>
+    <g id="Group_7160" data-name="Group 7160" transform="translate(-16325 -1494)">
+      <g id="Group_7162" data-name="Group 7162" transform="translate(16433 1761)">
+        <g id="Group_7161" data-name="Group 7161" transform="translate(0 0)">
+          <path id="Path_14706" data-name="Path 14706" d="M23.644,16.4a1.133,1.133,0,0,0-1.1,1.172v4.7a1.1,1.1,0,1,0,2.205,0v-4.7A1.134,1.134,0,0,0,23.644,16.4Zm0-1.175a2.274,2.274,0,0,1,2.206,2.347v4.7a2.21,2.21,0,1,1-4.411,0v-4.7A2.274,2.274,0,0,1,23.644,15.229Zm-7.719,2.347v4.7a1.1,1.1,0,1,0,2.206,0v-4.7a1.1,1.1,0,1,0-2.206,0Zm1.1-2.347a2.274,2.274,0,0,1,2.206,2.347v4.7a2.21,2.21,0,1,1-4.411,0v-4.7A2.274,2.274,0,0,1,17.028,15.229ZM9.308,17.576v4.7a1.1,1.1,0,1,0,2.205,0v-4.7a1.1,1.1,0,1,0-2.205,0Zm1.1-2.347a2.274,2.274,0,0,1,2.206,2.347v4.7a2.274,2.274,0,0,1-2.206,2.347A2.274,2.274,0,0,1,8.206,22.28v-4.7A2.274,2.274,0,0,1,10.411,15.229ZM7.1,28.151A1.141,1.141,0,0,0,8.2,29.325H25.86a1.178,1.178,0,0,0,0-2.349H8.2A1.13,1.13,0,0,0,7.1,28.151Zm-1.1,0A2.271,2.271,0,0,1,8.2,25.8H25.86a2.355,2.355,0,0,1,0,4.7H8.2A2.281,2.281,0,0,1,6,28.151ZM26.961,12.88s-.005,0-.007,0Zm-.009-.325a1.143,1.143,0,0,0-.4-.749L17.44,6.261a1.026,1.026,0,0,0-.824,0L7.506,11.806a1.106,1.106,0,0,0-.4.749v.314s19.851.011,19.851.011S26.952,12.555,26.952,12.555ZM17.987,5.241,27.1,10.786a2.286,2.286,0,0,1,.959,1.769v.314a1.134,1.134,0,0,1-1.094,1.185H7.094A1.151,1.151,0,0,1,6,12.869v-.314a2.26,2.26,0,0,1,.959-1.769l9.109-5.545A2.028,2.028,0,0,1,17.987,5.241Z" transform="translate(-6 -5)" fill="#fff" stroke="#fff" stroke-width="1.2"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

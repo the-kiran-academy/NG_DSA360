@@ -1,0 +1,25 @@
+<div class="login-container">
+  <div class="left-section">
+    <img src="assets/images/login-dsa.png" alt="Login Image">
+  </div>
+  <div class="right-section">
+    <div class="login-card">
+      <h2>Login</h2>
+      <form (ngSubmit)="login()" #loginForm="ngForm">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" [(ngModel)]="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" [(ngModel)]="password" required>
+        </div>
+        <div *ngIf="errorMessage" class="error-message">
+          {{ errorMessage }}
+        </div>
+
+        <button type="submit" [disabled]="!loginForm.form.valid">Login</button>
+      </form>
+    </div>
+  </div>
+</div>

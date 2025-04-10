@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="form-section">
+        <div class="form-header">DSA Application Form</div>
+        <div class="row form-group">
+          <div class="col-md-4 mb-3">
+            <label for="dsaApplicationId" class="form-label"
+              >DSA Application ID</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="dsaApplicationId"
+              name="dsaApplicationId"
+              [(ngModel)]="dsaApplicationId"
+              placeholder="DSA Application ID"
+              readonly
+            />
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="firstName"
+              name="firstName"
+              [(ngModel)]="dsaApplication.firstName"
+              placeholder="First Name"
+              readonly
+            />
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="middleName" class="form-label">Middle Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="middleName"
+              name="middleName"
+              [(ngModel)]="dsaApplication.middleName"
+              placeholder="Middle Name"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="lastName"
+              name="lastName"
+              [(ngModel)]="dsaApplication.lastName"
+              placeholder="Last Name"
+              readonly
+            />
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="gender" class="form-label">Gender</label>
+            <select
+              class="form-select"
+              id="gender"
+              name="gender"
+              [(ngModel)]="dsaApplication.gender"
+              disabled
+            >
+              <option value="Male" selected>Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="dateOfBirth" class="form-label">Date of Birth</label>
+            <input
+              type="date"
+              class="form-control"
+              id="dateOfBirth"
+              name="dateOfBirth"
+              [(ngModel)]="dsaApplication.dateOfBirth"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="nationality" class="form-label">Nationality</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nationality"
+              name="nationality"
+              [(ngModel)]="dsaApplication.nationality"
+              placeholder="Nationality"
+              readonly
+            />
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="contactNumber" class="form-label">Contact Number</label>
+            <input
+              type="text"
+              class="form-control"
+              id="contactNumber"
+              name="contactNumber"
+              [(ngModel)]="dsaApplication.contactNumber"
+              placeholder="Contact Number"
+              readonly
+            />
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="emailAddress" class="form-label">Email Address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="emailAddress"
+              name="emailAddress"
+              [(ngModel)]="dsaApplication.emailAddress"
+              placeholder="Email Address"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="streetAddress" class="form-label">Street Address</label>
+            <input
+              type="text"
+              class="form-control"
+              id="streetAddress"
+              name="streetAddress"
+              [(ngModel)]="dsaApplication.streetAddress"
+              placeholder="Street Address"
+              readonly
+            />
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="city" class="form-label">City</label>
+            <input
+              type="text"
+              class="form-control"
+              id="city"
+              name="city"
+              [(ngModel)]="dsaApplication.city"
+              placeholder="City"
+              readonly
+            />
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="state" class="form-label">State</label>
+            <input
+              type="text"
+              class="form-control"
+              id="state"
+              name="state"
+              [(ngModel)]="dsaApplication.state"
+              placeholder="State"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="postalCode" class="form-label">Postal Code</label>
+            <input
+              type="text"
+              class="form-control"
+              id="postalCode"
+              name="postalCode"
+              [(ngModel)]="dsaApplication.postalCode"
+              placeholder="Postal Code"
+              readonly
+            />
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="country" class="form-label">Country</label>
+            <input
+              type="text"
+              class="form-control"
+              id="country"
+              name="country"
+              [(ngModel)]="dsaApplication.country"
+              placeholder="Country"
+              readonly
+            />
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="preferredLanguage" class="form-label"
+              >Preferred Language</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="preferredLanguage"
+              name="preferredLanguage"
+              [(ngModel)]="dsaApplication.preferredLanguage"
+              placeholder="Preferred Language"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="educationalQualifications" class="form-label"
+              >Educational Qualifications</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="educationalQualifications"
+              name="educationalQualifications"
+              [(ngModel)]="dsaApplication.educationalQualifications"
+              placeholder="Educational Qualifications"
+              readonly
+            />
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="experience" class="form-label">Experience</label>
+            <input
+              type="text"
+              class="form-control"
+              id="experience"
+              name="experience"
+              [(ngModel)]="dsaApplication.experience"
+              placeholder="Experience"
+              readonly
+            />
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="isAssociatedWithOtherDSA" class="form-label"
+              >Associated with Other DSA</label
+            >
+            <select
+              class="form-select"
+              id="isAssociatedWithOtherDSA"
+              name="isAssociatedWithOtherDSA"
+              [(ngModel)]="dsaApplication.isAssociatedWithOtherDSA"
+              disabled
+            >
+              <option value="true" selected>Yes</option>
+              <option value="false">No</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="associatedInstitutionName" class="form-label"
+              >Associated Institution Name</label
+            >
+            <textarea
+              class="form-control"
+              id="associatedInstitutionName"
+              name="associatedInstitutionName"
+              [(ngModel)]="dsaApplication.associatedInstitutionName"
+              placeholder="Associated Institution Name"
+              readonly
+              rows="2"
+            ></textarea>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="referralSource" class="form-label"
+              >Referral Source</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="referralSource"
+              name="referralSource"
+              [(ngModel)]="dsaApplication.referralSource"
+              placeholder="Referral Source"
+              readonly
+            />
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="approvalStatus" class="form-label"
+              >Approval Status</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="approvalStatus"
+              name="approvalStatus"
+              [(ngModel)]="dsaApplication.approvalStatus"
+              placeholder="Approval Status"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="emailVerified" class="form-label">Email Verified</label>
+            <input
+              type="text"
+              class="form-control"
+              id="emailVerified"
+              name="emailVerified"
+              [(ngModel)]="dsaApplication.emailVerified"
+              placeholder="Email Verified"
+              readonly
+            />
+          </div>
+
+          <div *ngIf="!dsaApplication.emailVerified" class="col-md-4 mb-3">
+            To send email verification notification,
+            <a
+              class="verify-link"
+              (click)="sendVerificationEmail(dsaApplicationId)"
+              >click here</a
+            >.
+          </div>
+        </div>
+      </div>
+
+      <!-- Approve application -->
+      <!-- KYC Approval Section -->
+      <div class="form-section">
+        <div class="form-header">DSA Application Approval</div>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="approvalStatus" class="form-label"
+              >Approval Status</label
+            >
+            <div class="dropdown-container">
+              <select
+                id="approvalStatus"
+                name="approvalStatus"
+                class="form-control dropdown"
+                [(ngModel)]="dsaApplication.approvalStatus"
+              >
+                <option value="Pending">Pending</option>
+                <option value="Under Review">Under Review</option>
+                <option value="Approved">Approved</option>
+                <option value="Rejected">Rejected</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-12 mb-3">
+            <button
+            [disabled]="dsaApplication.emailVerified===false"
+              type="button"
+              class="btn btn-primary"
+              (click)="submitApprovalStatus()"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+.form-section {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.form-header {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+label {
+  color: #13579b;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.verify-link {
+  color: #007bff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.verify-link:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}

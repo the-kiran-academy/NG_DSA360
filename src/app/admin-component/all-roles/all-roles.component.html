@@ -1,0 +1,39 @@
+<div class="card">
+  <div class="card-body">
+    <!-- title -->
+    <h4 class="card-title">All System User Roles</h4>
+
+    <!-- title -->
+    <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+      <table class="table table-striped align-middle">
+        <thead>
+          <tr>
+            <th class="text-dark font-medium fs-4">Roll Id</th>
+            <th class="text-dark font-medium fs-4">Roll Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let role of roles">
+            <td>{{ role.id }}</td>
+            <td>{{ role.name.startsWith('ROLE_') ? role.name.slice(5) : role.name }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Add Role Button -->
+    <button class="btn btn-primary mt-3" (click)="showAddRoleForm = true">Add Role</button>
+
+    <!-- Add Role Form -->
+    <div *ngIf="showAddRoleForm" class="mt-3">
+      <form (ngSubmit)="addRole()">
+        <div class="mb-3">
+          <label for="roleName" class="form-label">Role Name</label>
+          <input type="text" class="form-control" id="roleName" [(ngModel)]="newRoleName" name="roleName" required>
+        </div>
+        <button type="submit" class="btn btn-success  me-2">Submit</button>
+        <button type="button" class="btn btn-secondary  me-2" (click)="showAddRoleForm = false">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>

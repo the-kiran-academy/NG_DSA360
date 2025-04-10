@@ -1,0 +1,91 @@
+/* General form container and layout */
+.container {
+  max-width: 1200px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+/* Section headers */
+.form-header {
+  font-weight: bold;
+  color: #4a4a4a;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* Form groups */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Input fields */
+.form-control {
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* Styling for buttons */
+.btn-primary {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #007bff;
+  border-color: #007bff;
+  box-shadow: 0px 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+/* Add some spacing for form sections */
+.form-section {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Background */
+body {
+  background: linear-gradient(to right, #007bff, #4c8bff);
+  min-height: 100vh;
+  font-family: "Arial", sans-serif;
+}
+
+/* Add padding and adjust margins */
+.mt-5 {
+  margin-top: 3rem !important;
+}
+
+.mb-3,
+.mb-4 {
+  margin-bottom: 1rem !important;
+}
+
+/* File input customization */
+input[type="file"] {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+/* Read-only input field styling */
+input[readonly] {
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+}
+
+.text {
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}

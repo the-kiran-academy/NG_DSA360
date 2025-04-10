@@ -1,0 +1,14 @@
+{
+    "extends": "stylelint-config-standard",
+    "plugins": [
+      "stylelint-no-unused-selectors"
+    ],
+    "rules": {
+      "plugin/no-unused-selectors": [
+        true,
+        {
+          "files": ["./src/**/*.html"]
+        }
+      ]
+    }
+  }

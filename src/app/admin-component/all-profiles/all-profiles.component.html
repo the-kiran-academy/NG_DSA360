@@ -1,0 +1,54 @@
+<div class="card">
+  <div class="card-body">
+    <!-- title -->
+    <h4 class="card-title">All System Users</h4>
+
+    <!-- title -->
+    <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+      <table class="table table-striped align-middle">
+        <thead>
+          <tr>
+            <th class="text-dark font-medium fs-4">Username</th>
+            <th class="text-dark font-medium fs-4">Roles</th>
+            <th class="text-dark font-medium fs-4">Regions</th>
+            <th class="text-dark font-medium fs-4">Status</th>
+            <th class="text-dark font-medium fs-4">Created</th>
+            <th class="text-dark font-medium fs-4">DSA Id</th>
+            <th class="text-dark font-medium fs-4">Action</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let profile of profiles">
+
+            <td>{{ profile.username }}</td>
+            <td>
+              <ul>
+                <li *ngFor="let role of profile.roles">{{ role.name.startsWith('ROLE_') ? role.name.slice(5) : role.name }}</li>
+              </ul>
+            </td>
+
+            <td>
+              <ul>
+                <li *ngFor="let region of profile.regions">{{ region.regionName }}</li>
+              </ul>
+            </td>
+
+            <td>{{ profile.status}}</td>
+            <td>{{ profile.createdDate}}</td>
+
+            <td>{{ profile.dsaApplicationId.dsaApplicationId }}</td>
+
+            <td>
+              <button class="btn btn-primary" (click)="retrieveSystemUser(profile.username)">
+                <i class="bi bi-search"></i>
+              </button>
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

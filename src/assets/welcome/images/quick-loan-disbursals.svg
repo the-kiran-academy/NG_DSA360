@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 60 60">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#6c87fc"/>
+      <stop offset="1" stop-color="#425cfa"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#926cfc"/>
+      <stop offset="1" stop-color="#42c1fa"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <ellipse id="Ellipse_231" data-name="Ellipse 231" cx="28.5" cy="29" rx="28.5" ry="29" transform="translate(0.365 -0.452)" fill="url(#linear-gradient)"/>
+    </clipPath>
+  </defs>
+  <g id="Group_7169" data-name="Group 7169" transform="translate(-1388 -250)">
+    <g id="Group_7163" data-name="Group 7163" transform="translate(1388 249.817)">
+      <circle id="Ellipse_230" data-name="Ellipse 230" cx="30" cy="30" r="30" transform="translate(0 0.183)" fill="url(#linear-gradient-2)"/>
+      <g id="Mask_Group_53" data-name="Mask Group 53" transform="translate(1.635 1.635)" opacity="0.11" clip-path="url(#clip-path)">
+        <path id="Union_16" data-name="Union 16" d="M31.409,46.27,14.86,62.818,0,47.958,16.548,31.409,0,14.861,14.86,0,31.409,16.549,47.958,0,62.819,14.861,46.27,31.409,62.819,47.958,47.958,62.818Z" transform="translate(-2.742 -2.759)" fill="#fff"/>
+      </g>
+    </g>
+    <g id="noun_Money_Bag_2390689" data-name="noun_Money Bag_2390689" transform="translate(1409 267)">
+      <path id="Path_14707" data-name="Path 14707" d="M433.689,194.426v.737a5.9,5.9,0,0,1-5.9,5.9h-5.9a5.9,5.9,0,0,1-5.9-5.9v-.737c0-2.974,1.843-6.356,5.481-10.188a2.211,2.211,0,0,1,.185-3.366l-1.9-3.8a.737.737,0,0,1,.659-1.066h8.844a.737.737,0,0,1,.659,1.066l-1.9,3.8a2.211,2.211,0,0,1,.189,3.363C431.847,188.026,433.689,191.411,433.689,194.426Zm-16.215,0v.737a4.422,4.422,0,0,0,4.422,4.422h5.9a4.422,4.422,0,0,0,4.422-4.422v-.737c0-2.66-1.8-5.867-5.466-9.581h-3.806C419.279,188.6,417.474,191.81,417.474,194.426Zm5.615-14H426.6l1.474-2.948h-6.459ZM423,181.9a.737.737,0,1,0,0,1.474h3.685a.737.737,0,0,0,0-1.474Z" transform="translate(-416 -176)" fill="#fff" stroke="#fff" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

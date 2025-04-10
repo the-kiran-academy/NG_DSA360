@@ -1,0 +1,49 @@
+<div class="card">
+  <div class="card-body">
+    <!-- title -->
+    <h4 class="card-title">All DSA Applications</h4>
+
+    <!-- title -->
+    <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+      <table id="tbl"  class="table table-striped align-middle" >
+        <thead>
+          <tr>
+            <th class="text-dark font-medium fs-4">Name</th>
+            <th class="text-dark font-medium fs-4">DSA ID</th>
+            <th class="text-dark font-medium fs-4">User Status</th>
+            <th class="text-dark font-medium fs-4">Email Verification</th>
+            <th class="text-dark font-medium fs-4">Mobile</th>
+            <th class="text-dark font-medium fs-4">Action</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let application of dsaApplications">
+            <td>
+              <div class="d-flex align-items-center">
+                <div class="ms-3">
+                  <h5 class="mb-0 font-medium">
+                    {{ application.firstName }} {{ application.lastName }}
+                  </h5>
+                  <span>{{ application.emailAddress }}</span>
+                </div>
+              </div>
+            </td>
+            <td>{{ application.dsaApplicationId }}</td>
+            <td>{{ application.approvalStatus }}</td>
+            <td>{{ application.emailVerified ? 'Yes' : 'No' }}</td>
+
+            <td>
+              <h5 class="mb-0 fw-normal">{{ application.contactNumber }}</h5>
+            </td>
+            <td>
+              <button class="btn btn-primary" (click)="retrieveDsa(application.dsaApplicationId)">
+                <i class="bi bi-search"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bank Loan Condition</title>
+  </head>
+  <body>
+    <div class="container mt-5 scrollable-form">
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-section">
+          <div class="form-header">Bank Loan Condition</div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="dsaApplicationId" class="form-label">Bank Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="bankName"
+                name="bankName"
+                [(ngModel)]="loanCondition.bankName"
+                placeholder="Bank Name"
+                required              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="isAssociatedWithOtherDSA" class="form-label"
+                >Loan Type</label
+              >
+              <select class="form-select" id="loanType" name="loanType"  [(ngModel)]="loanCondition.loanType" required>
+                <option value="home">Home Loan</option>
+                <option value="personal">Personal Loan</option>
+                <option value="car">Car Loan</option>
+                <option value="education">Education Loan</option>
+                <option value="business">Business Loan</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="interestRate" class="form-label">Interest Rate (%)</label>
+              <input
+                type="number"
+                class="form-control"
+                id="interestRate"
+                name="interestRate"
+                [(ngModel)]="loanCondition.interestRate"
+                placeholder="Interest Rate"
+                required
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="minCreditScore" class="form-label">Minimum Credit Score</label>
+              <input
+                type="text"
+                class="form-control"
+                id="minCreditScore"
+                name="minCreditScore"
+                [(ngModel)]="loanCondition.minCreditScore"
+                placeholder="Minimum Credit Score"
+                required
+              />
+            </div>
+          </div>
+          <div class="row">
+
+            <div class="col-md-6 mb-3">
+              <label for="processingFee" class="form-label">Processing Fee (%)</label>
+              <input
+                type="number"
+                class="form-control"
+                id="processingFee"
+                name="processingFee"
+                [(ngModel)]="loanCondition.processingFee"
+                placeholder="Processing Fee (%)"
+                required
+              />
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

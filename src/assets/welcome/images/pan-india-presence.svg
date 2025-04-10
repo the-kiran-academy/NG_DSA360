@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 60 60">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#6c87fc"/>
+      <stop offset="1" stop-color="#425cfa"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#4157a1"/>
+      <stop offset="1" stop-color="#4090ec"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <ellipse id="Ellipse_234" data-name="Ellipse 234" cx="28.5" cy="29" rx="28.5" ry="29" transform="translate(0.08 -0.452)" fill="url(#linear-gradient)"/>
+    </clipPath>
+  </defs>
+  <g id="Group_7170" data-name="Group 7170" transform="translate(-1646 -250)">
+    <g id="Group_7151" data-name="Group 7151" transform="translate(864 -3843)">
+      <g id="Group_3618" data-name="Group 3618" transform="translate(781.585 4092.817)">
+        <g id="Group_3616" data-name="Group 3616" transform="translate(0 0)">
+          <circle id="Ellipse_213" data-name="Ellipse 213" cx="30" cy="30" r="30" transform="translate(0.415 0.183)" fill="url(#linear-gradient-2)"/>
+        </g>
+        <g id="Mask_Group_55" data-name="Mask Group 55" transform="translate(1.835 1.835)" opacity="0.11" clip-path="url(#clip-path)">
+          <path id="Union_18" data-name="Union 18" d="M31.409,46.27,14.86,62.818,0,47.958,16.548,31.409,0,14.861,14.86,0,31.409,16.549,47.958,0,62.819,14.861,46.27,31.409,62.819,47.958,47.958,62.818Z" transform="translate(-3.068 -2.759)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+    <g id="noun_business_contact_1236153" data-name="noun_business contact_1236153" transform="translate(1653.67 253)">
+      <path id="Path_14708" data-name="Path 14708" d="M34.221,14H10.349A4.019,4.019,0,0,0,6.33,18.019V36.286a4.019,4.019,0,0,0,4.019,4.019H34.221a4.019,4.019,0,0,0,4.019-4.019V18.019A4.019,4.019,0,0,0,34.221,14Zm1.827,22.286a1.827,1.827,0,0,1-1.827,1.827H10.349a1.827,1.827,0,0,1-1.827-1.827V18.019a1.827,1.827,0,0,1,1.827-1.827H34.221a1.827,1.827,0,0,1,1.827,1.827Z" transform="translate(0 0)" fill="#fff"/>
+      <path id="Path_14709" data-name="Path 14709" d="M64.267,46.5H56.306a1.1,1.1,0,0,0,0,2.192h7.961a1.1,1.1,0,0,0,0-2.192Z" transform="translate(-31.022 -20.626)" fill="#fff"/>
+      <path id="Path_14710" data-name="Path 14710" d="M56.306,36.692h3.942a1.1,1.1,0,1,0,0-2.192H56.306a1.1,1.1,0,0,0,0,2.192Z" transform="translate(-31.022 -13.01)" fill="#fff"/>
+      <circle id="Ellipse_390" data-name="Ellipse 390" cx="3.036" cy="3.036" r="3.036" transform="translate(13.224 21.132)" fill="#fff"/>
+      <path id="Path_14711" data-name="Path 14711" d="M24.3,54a5.9,5.9,0,0,0-5.3,3.04v1.52H29.632v-1.52A5.9,5.9,0,0,0,24.3,54Z" transform="translate(-8.041 -25.382)" fill="#fff"/>
+      <path id="Path_14712" data-name="Path 14712" d="M64.267,58.5H56.306a1.1,1.1,0,0,0,0,2.192h7.961a1.1,1.1,0,0,0,0-2.192Z" transform="translate(-31.022 -28.242)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

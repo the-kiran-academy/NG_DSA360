@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+
+     <!-- Navigation Bar -->
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand">DSA 360 Solution</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/welcome">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/auth">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-3">
+       <!-- Scrolling Text Section -->
+       <div class="text bg-info text-white p-3">
+        <span>Please submit your DSA KYC documents before the end of this month to avoid any delays in the process.</span>
+      </div>
+      <!-- DSA KYC Details Section -->
+      <div class="form-section">
+        <div class="form-header h4 mb-4">DSA KYC Details</div>
+        <div class="row form-group">
+
+          <div class="col-md-6 mb-3">
+            <label for="bankName" class="form-label">Bank Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="bankName"
+              name="bankName"
+              [(ngModel)]="dsaKyc.bankName"
+              placeholder="Enter Bank Name"
+              required
+
+            />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="accountNumber" class="form-label">Account Number</label>
+            <input
+              type="number"
+              class="form-control"
+              id="accountNumber"
+              name="accountNumber"
+              [(ngModel)]="dsaKyc.accountNumber"
+              placeholder="Enter Account Number"
+              required
+
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="ifscCode" class="form-label">IFSC Code</label>
+            <input
+              type="text"
+              class="form-control"
+              id="ifscCode"
+              name="ifscCode"
+              [(ngModel)]="dsaKyc.ifscCode"
+              placeholder="Enter IFSC Code"
+              required
+
+            />
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="dsaId" class="form-label">DSA ID</label>
+            <input
+              type="text"
+              class="form-control"
+              id="dsaId"
+              name="dsaId"
+              [(ngModel)]="dsaKyc.dsaApplicationId"
+              placeholder="Enter DSA ID"
+              required
+              readonly
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- KYC Document Upload Section -->
+      <div class="form-section">
+        <div class="form-header h4 mb-4">Upload KYC Documents</div>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="passport" class="form-label">Passport</label>
+            <input type="file" id="passport" name="dsaKyc.passport"  (change)="onPassportChange($event)"  class="form-control" />
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="drivingLicence" class="form-label">Driving Licence</label>
+            <input type="file" id="drivingLicence" name="dsaKyc.drivingLicence"  (change)="ondrivingLicenceChange($event)"  class="form-control" />
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="aadharCard" class="form-label">Aadhar Card</label>
+            <input type="file" id="aadharCard" name="dsaKyc.aadharCard" (change)="onaadharCardChange($event)" class="form-control" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="panCard" class="form-label">PAN Card</label>
+            <input type="file" id="panCard" name="dsaKyc.panCard" (change)="onpanCardChange($event)" class="form-control" />
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="photograph" class="form-label">Photograph</label>
+            <input type="file" id="photograph" name="dsaKyc.photograph" (change)="onphotographChange($event)" class="form-control" />
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="addressProof" class="form-label">Address Proof</label>
+            <input type="file" id="addressProof" name="dsaKyc.addressProof" (change)="onaddressProofChange($event)"  class="form-control" />
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="addressProof" class="form-label">Bank Passbook</label>
+            <input type="file" id="bankPassbook" name="dsaKyc.bankPassbook" (change)="onbankPassbookChange($event)"  class="form-control" />
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 mb-3">
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="submitKycForm()"
+          >
+            Submit KYC Details
+          </button>
+        </div>
+      </div>
+    </div>
+
+<!-- Footer Section -->
+<footer class="bg-light mt-2 text-center">
+  <div class="container p-3">
+    <p class="mb-0">&copy; 2024 DSA 360 Solution. All rights reserved.</p>
+  </div>
+</footer>
+
+  </body>
+</html>

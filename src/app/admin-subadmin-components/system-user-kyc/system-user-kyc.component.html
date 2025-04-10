@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="container mt-5" style="max-height: 400px; overflow-y: auto">
+    <!-- DSA KYC Details Section -->
+    <div class="form-section">
+      <div class="form-header">DSA KYC Details</div>
+      <div class="row form-group">
+        <div class="col-md-4 mb-3">
+          <label for="dsaKycId" class="form-label">DSA KYC ID</label>
+          <input
+            type="text"
+            class="form-control"
+            id="dsaKycId"
+            name="dsaKycId"
+            [(ngModel)]="dsaKyc.dsaKycId"
+            placeholder="DSA KYC ID"
+            readonly
+          />
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="bankName" class="form-label">Bank Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="bankName"
+            name="bankName"
+            [(ngModel)]="dsaKyc.bankName"
+            placeholder="Bank Name"
+            readonly
+          />
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="accountNumber" class="form-label">Account Number</label>
+          <input
+            type="text"
+            class="form-control"
+            id="accountNumber"
+            name="accountNumber"
+            [(ngModel)]="dsaKyc.accountNumber"
+            placeholder="Account Number"
+            readonly
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="ifscCode" class="form-label">IFSC Code</label>
+          <input
+            type="text"
+            class="form-control"
+            id="ifscCode"
+            name="ifscCode"
+            [(ngModel)]="dsaKyc.ifscCode"
+            placeholder="IFSC Code"
+            readonly
+          />
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="approvalStatusKyc" class="form-label"
+            >Approval Status</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="approvalStatusKyc"
+            name="approvalStatusKyc"
+            [(ngModel)]="dsaKyc.approvalStatus"
+            placeholder="Approval Status"
+            readonly
+          />
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="dsaId" class="form-label">DSA ID</label>
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              id="dsaId"
+              name="dsaId"
+              [(ngModel)]="dsaKyc.dsaApplicationId.dsaApplicationId"
+              placeholder="DSA ID"
+              readonly
+            />
+            <i
+              class="bi bi-search search-icon"
+              (click)="getDsaById(dsaKyc.dsaApplicationId.dsaApplicationId)"
+            ></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DSA KYC Images Section -->
+    <div class="form-section">
+      <div class="form-header">KYC Documents</div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="passport" class="form-label">Passport</label>
+          <a [href]="dsaKyc.passport" target="_blank">
+            <img
+              src="{{ dsaKyc.passport }}"
+              class="img-thumbnail"
+              alt="Passport"
+            />  
+          </a>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="drivingLicence" class="form-label">Driving Licence</label>
+          <a [href]="dsaKyc.drivingLicence" target="_blank">
+            <img
+              src="{{ dsaKyc.drivingLicence }}"
+              class="img-thumbnail"
+              alt="Driving Licence"
+            />
+          </a>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="aadharCard" class="form-label">Aadhar Card</label>
+          <a [href]="dsaKyc.aadharCard" target="_blank">
+            <img
+              src="{{ dsaKyc.aadharCard }}"
+              class="img-thumbnail"
+              alt="Aadhar Card"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="panCard" class="form-label">PAN Card</label>
+          <a [href]="dsaKyc.panCard" target="_blank">
+            <img
+              src="{{ dsaKyc.panCard }}"
+              class="img-thumbnail"
+              alt="PAN Card"
+            />
+          </a>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="photograph" class="form-label">Photograph</label>
+          <a [href]="dsaKyc.photograph" target="_blank">
+            <img
+              src="{{ dsaKyc.photograph }}"
+              class="img-thumbnail"
+              alt="Photograph"
+            />
+          </a>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="addressProof" class="form-label">Address Proof</label>
+          <a [href]="dsaKyc.addressProof" target="_blank">
+            <img
+              src="{{ dsaKyc.addressProof }}"
+              class="img-thumbnail"
+              alt="Address Proof"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="bankPassbook" class="form-label">Bank Passbook</label>
+          <a [href]="dsaKyc.bankPassbook" target="_blank">
+            <img
+              src="{{ dsaKyc.bankPassbook }}"
+              class="img-thumbnail"
+              alt="Bank Passbook"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- KYC Approval Section -->
+    <div class="form-section">
+      <div class="form-header">KYC Approval</div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="approvalStatus" class="form-label">Approval Status</label>
+          <div class="dropdown-container">
+            <select
+              id="approvalStatus"
+              name="approvalStatus"
+              class="form-control dropdown"
+              [(ngModel)]="approvalStatus"
+            >
+              <option value="Pending">Pending</option>
+              <option value="Under Review">Under Review</option>
+              <option value="Approved">Approved</option>
+              <option value="Rejected">Rejected</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-12 mb-3">
+          <button type="button" class=" btn btn-primary" (click)="submitApprovalStatus()">
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>

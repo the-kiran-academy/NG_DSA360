@@ -1,0 +1,104 @@
+<!-- ============================================================== -->
+<!-- toggle and nav items -->
+<!-- ============================================================== -->
+
+<ul class="navbar-nav float-start me-auto ">
+  <li class="nav-item">
+    <a class="nav-link waves-effect waves-dark" [routerLink]="['/admin-dashboard']" routerLinkActive="router-link-active" > Home </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link waves-effect waves-dark" [routerLink]="['/admin-dashboard/component/all-dsa-applications']"> All DSA Applications </a>
+  </li>
+  <!-- ============================================================== -->
+  <!-- System User -->
+
+  <li class="nav-item" ngbDropdown>
+    <a
+      ngbDropdownToggle
+      class="nav-link waves-effect waves-dark"
+      href="javascript:void(0)"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+    <span class="d-none d-md-block"> System User</span>
+    <span class="d-block d-md-none"><i class="bi bi-file-earmark-plus fs-4"></i></span>
+
+    </a>
+    <div class="dropdown-menu-start" ngbDropdownMenu>
+      <a class="dropdown-item" [routerLink]="['/admin-dashboard/component/create-new-profile']">New Profile</a>
+      <a class="dropdown-item" [routerLink]="['/admin-dashboard/component/all-profiles']">All Profiles</a>
+      <!-- <div class="dropdown-divider"></div> -->
+      <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+    </div>
+  </li>
+
+<!-- ============================================================== -->
+  <!-- System User KYC -->
+
+  <li class="nav-item">
+    <a class="nav-link waves-effect waves-dark"[routerLink]="['/admin-dashboard/component/system-user-kyc']"> System User KYC </a>
+  </li>
+
+<!-- Tax Toolkit -->
+<li class="nav-item" ngbDropdown>
+  <a
+    ngbDropdownToggle
+    class="nav-link waves-effect waves-dark"
+    href="javascript:void(0)"
+    data-toggle="dropdown"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+  <span class="d-none d-md-block"> Tax Toolkit</span>
+  <span class="d-block d-md-none"><i class="bi bi-file-earmark-plus fs-4"></i></span>
+
+  </a>
+  <div class="dropdown-menu-start" ngbDropdownMenu>
+    <a class="dropdown-item" [routerLink]="['/admin-dashboard/component/home-loan-calculator']">Home Loan EMI Calculator</a>
+    <a class="dropdown-item" [routerLink]="['/admin-dashboard/component/bussiness-loan-calculator']">Business Loan EMI Calculator</a>
+    <a class="dropdown-item" [routerLink]="['/admin-dashboard/component/personal-loan-calculator']">Personal  Loan EMI Calculator</a>
+    <a class="dropdown-item" [routerLink]="['/admin-dashboard/component/car-loan-calculator']">Car Loan EMI Calculator</a>
+
+    <!-- <div class="dropdown-divider"></div> -->
+    <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+  </div>
+</li>
+
+</ul>
+<!-- ============================================================== -->
+<!-- Right side toggle and nav items -->
+<!-- ============================================================== -->
+<ul class="navbar-nav float-end">
+  <!-- ============================================================== -->
+  <!-- User profile and search -->
+  <!-- ============================================================== -->
+  <li class="nav-item" ngbDropdown placement="bottom-end">
+    <a
+      ngbDropdownToggle
+      class="nav-link waves-effect waves-dark pro-pic"
+      href="javascript:void(0)"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <img
+        src="assets/images/users/user4.jpg"
+        alt="user"
+        class="rounded-circle"
+        width="31"
+      />
+      <span class="ms-2"> {{loggedInUserName }}</span>
+    </a>
+    <div class="dropdown-menu-right" ngbDropdownMenu>
+      <a class="dropdown-item" [routerLink]="['/admin-dashboard/component/my-profile']" (click)="onMyProfileClick(loggedInUserName)"> My Profile</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" [routerLink]="['/admin-dashboard/component/account-setting']"> Account Setting</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" (click)="logout()"> Logout</a>
+    </div>
+  </li>
+  <!-- ============================================================== -->
+  <!-- User profile and search -->
+  <!-- ============================================================== -->
+</ul>

@@ -1,0 +1,312 @@
+<html>
+  <body>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand">DSA 360 Solution</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/welcome">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/auth">Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-2">
+  <form [formGroup]="dsaApplication" (ngSubmit)="apply()">
+    <div class="form-section">
+      <div class="form-header">DSA Application Form</div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="firstName" class="form-label">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="firstName"
+            formControlName="firstName"
+            placeholder="First Name"
+          />
+          <div *ngIf="dsaApplication.get('firstName')?.invalid && dsaApplication.get('firstName')?.touched" class="text-danger">
+            First Name is required.
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="middleName" class="form-label">Middle Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="middleName"
+            formControlName="middleName"
+            placeholder="Middle Name"
+          />
+          <div *ngIf="dsaApplication.get('middleName')?.invalid && dsaApplication.get('middleName')?.touched" class="text-danger">
+            Middle Name is required.
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="lastName" class="form-label">Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="lastName"
+            formControlName="lastName"
+            placeholder="Last Name"
+          />
+          <div *ngIf="dsaApplication.get('lastName')?.invalid && dsaApplication.get('lastName')?.touched" class="text-danger">
+            Last Name is required.
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="gender" class="form-label">Gender</label>
+          <select
+            class="form-select"
+            id="gender"
+            formControlName="gender"
+          >
+            <option value="Male" selected>Male</option>
+            <option value="Female">Female</option>
+          </select>
+          <div *ngIf="dsaApplication.get('gender')?.invalid && dsaApplication.get('gender')?.touched" class="text-danger">
+           Select Gender.
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="dateOfBirth" class="form-label">Date of Birth</label>
+          <input
+            type="date"
+            class="form-control"
+            id="dateOfBirth"
+            formControlName="dateOfBirth"
+          />
+          <div *ngIf="dsaApplication.get('dateOfBirth')?.invalid && dsaApplication.get('dateOfBirth')?.touched" class="text-danger">
+            Date of Birth is required.
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="emailAddress" class="form-label">Email Address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="emailAddress"
+            formControlName="emailAddress"
+            placeholder="Email Address"
+          />
+          <div *ngIf="dsaApplication.get('emailAddress')?.invalid && dsaApplication.get('emailAddress')?.touched" class="text-danger">
+            A valid email is required.
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="nationality" class="form-label">Nationality</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nationality"
+            formControlName="nationality"
+            placeholder="Nationality"
+          />
+          <div *ngIf="dsaApplication.get('nationality')?.invalid && dsaApplication.get('nationality')?.touched" class="text-danger">
+            Nationality is required.
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="contactNumber" class="form-label">Contact Number</label>
+          <input
+            type="text"
+            class="form-control"
+            id="contactNumber"
+            formControlName="contactNumber"
+            placeholder="Contact Number"
+          />
+          <div *ngIf="dsaApplication.get('contactNumber')?.invalid && dsaApplication.get('contactNumber')?.touched" class="text-danger">
+            Contact Number is required.
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="referralSource" class="form-label">Referral Source</label>
+          <input
+            type="text"
+            class="form-control"
+            id="referralSource"
+            formControlName="referralSource"
+            placeholder="Referral Source"
+          />
+          <div *ngIf="dsaApplication.get('referralSource')?.invalid && dsaApplication.get('referralSource')?.touched" class="text-danger">
+            Referral Source is required.
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="streetAddress" class="form-label">Street Address</label>
+          <input
+            type="text"
+            class="form-control"
+            id="streetAddress"
+            formControlName="streetAddress"
+            placeholder="Street Address"
+          />
+          <div *ngIf="dsaApplication.get('streetAddress')?.invalid && dsaApplication.get('streetAddress')?.touched" class="text-danger">
+            Street Address is required.
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="city" class="form-label">City</label>
+          <input
+            type="text"
+            class="form-control"
+            id="city"
+            formControlName="city"
+            placeholder="City"
+          />
+          <div *ngIf="dsaApplication.get('city')?.invalid && dsaApplication.get('city')?.touched" class="text-danger">
+            City is required.
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="state" class="form-label">State</label>
+          <input
+            type="text"
+            class="form-control"
+            id="state"
+            formControlName="state"
+            placeholder="State"
+          />
+          <div *ngIf="dsaApplication.get('state')?.invalid && dsaApplication.get('state')?.touched" class="text-danger">
+            State is required.
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="postalCode" class="form-label">Postal Code</label>
+          <input
+            type="text"
+            class="form-control"
+            id="postalCode"
+            formControlName="postalCode"
+            placeholder="Postal Code"
+          />
+          <div *ngIf="dsaApplication.get('postalCode')?.invalid && dsaApplication.get('postalCode')?.touched" class="text-danger">
+            Postal Code is required.
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="country" class="form-label">Country</label>
+          <input
+            type="text"
+            class="form-control"
+            id="country"
+            formControlName="country"
+            placeholder="Country"
+          />
+          <div *ngIf="dsaApplication.get('country')?.invalid && dsaApplication.get('country')?.touched" class="text-danger">
+            Country is required.
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="preferredLanguage" class="form-label">Preferred Language</label>
+          <input
+            type="text"
+            class="form-control"
+            id="preferredLanguage"
+            formControlName="preferredLanguage"
+            placeholder="Preferred Language"
+          />
+          <div *ngIf="dsaApplication.get('preferredLanguage')?.invalid && dsaApplication.get('preferredLanguage')?.touched" class="text-danger">
+            Preferred Language is required.
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="educationalQualifications" class="form-label">Educational Qualifications</label>
+          <input
+            type="text"
+            class="form-control"
+            id="educationalQualifications"
+            formControlName="educationalQualifications"
+            placeholder="Educational Qualifications"
+          />
+          <div *ngIf="dsaApplication.get('educationalQualifications')?.invalid && dsaApplication.get('educationalQualifications')?.touched" class="text-danger">
+            Educational Qualifications are required.
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="experience" class="form-label">Experience</label>
+          <input
+            type="text"
+            class="form-control"
+            id="experience"
+            formControlName="experience"
+            placeholder="Experience"
+          />
+          <div *ngIf="dsaApplication.get('experience')?.invalid && dsaApplication.get('experience')?.touched" class="text-danger">
+            Experience is required.
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="isAssociatedWithOtherDSA" class="form-label">Is Associated with Other DSA?</label>
+          <select
+            class="form-select"
+            id="isAssociatedWithOtherDSA"
+            formControlName="isAssociatedWithOtherDSA"
+          >
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+          </select>
+          <div *ngIf="dsaApplication.get('isAssociatedWithOtherDSA')?.invalid && dsaApplication.get('isAssociatedWithOtherDSA')?.touched" class="text-danger">
+            This Field is required Yes/NO.
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="associatedInstitutionName" class="form-label">Associated Institution Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="associatedInstitutionName"
+            formControlName="associatedInstitutionName"
+            placeholder="Associated Institution Name"
+          />
+          <div *ngIf="dsaApplication.get('associatedInstitutionName')?.invalid && dsaApplication.get('associatedInstitutionName')?.touched" class="text-danger">
+            Associated Institution Name is required.
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit Application</button>
+
+      </div>
+    </div>
+  </form>
+</div>
+
+ <!-- Footer Section -->
+ <footer class="bg-light mt-2 text-center">
+  <div class="container p-3">
+    <p class="mb-0">&copy; 2024 DSA 360 Solution. All rights reserved.</p>
+  </div>
+</footer>
+
+  </body>
+</html>
+

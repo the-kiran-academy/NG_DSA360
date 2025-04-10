@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile Form</title>
+  </head>
+  <body>
+    <div class="container mt-5 scrollable-form">
+      <form #userProfileForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-section">
+          <div class="form-header">Account Information</div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input
+                type="text"
+                class="form-control"
+                id="username"
+                name="username"
+                [(ngModel)]="userProfile.username"
+                placeholder="Username"
+                required
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                [(ngModel)]="userProfile.password"
+                placeholder="Password"
+                required
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="regions" class="form-label">Select Regions</label>
+              <select
+                class="form-control"
+                id="regions"
+                name="regions"
+                multiple
+                [(ngModel)]="selectedRegions"
+                (focus)="expandDropdownRegion()"
+                [attr.size]="dropdownSizeRegion"
+                required
+              >
+                <option *ngFor="let region of regions" [value]="region.id">
+                  {{ region.regionName }}
+                </option>
+              </select>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label for="roles" class="form-label">Select Role</label>
+              <select
+                class="form-control"
+                id="roles"
+                name="roles"
+                multiple
+                [(ngModel)]="selectedRoles"
+                (focus)="expandDropdownRole()"
+
+                [attr.size]="dropdownSizeRole"
+                required
+              >
+                <option *ngFor="let role of roles" [value]="role.id">
+                  {{ role.name }}
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="question" class="form-label">Security Question</label>
+              <select id="question" class="form-control" name="question" [(ngModel)]="userProfile.question" required>
+                <option
+                  *ngFor="let question of questions"
+                  [value]="question"
+                >
+                  {{ question }}
+                </option>
+              </select>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label for="answer" class="form-label">Answer</label>
+              <input
+                type="text"
+                class="form-control"
+                name="answer"
+                [(ngModel)]="userProfile.answer"
+                id="answer"
+                placeholder="Answer"
+                required
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="form-header">Personal Information</div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="dsaApplicationId" class="form-label"
+                >DSA Application ID</label
+              >
+              <select
+                class="form-control"
+                id="dsaApplicationId"
+                name="dsaApplicationId"
+                [(ngModel)]="userProfile.dsaApplicationId"
+                (change)="onDsaApplicationChange($event)"
+                required
+              >
+
+                <option
+                  *ngFor="let option of dsaApplicationIds"
+                  [value]="option"
+                >
+                  {{ option }}
+                </option>
+              </select>
+              <span *ngIf="dsaApplicationIds.length<=0" style="color: red;"> No DSA Found, Check its Email is verified or its a System User</span>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="firstName" class="form-label">First Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="firstName"
+                name="firstName"
+                [(ngModel)]="dsaApplication.firstName"
+                placeholder="First Name"
+                readonly
+
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="middleName" class="form-label">Middle Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="middleName"
+                name="middleName"
+                [(ngModel)]="dsaApplication.middleName"
+                placeholder="Middle Name"
+                readonly
+
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="lastName" class="form-label">Last Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="lastName"
+                name="lastName"
+                [(ngModel)]="dsaApplication.lastName"
+                placeholder="Last Name"
+                readonly
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="gender" class="form-label">Gender</label>
+              <select class="form-select" id="gender" name="gender" disabled>
+                <option>{{ dsaApplication.gender }}</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="dateOfBirth" class="form-label">Date of Birth</label>
+              <input
+                type="date"
+                class="form-control"
+                id="dateOfBirth"
+                name="dateOfBirth"
+                [(ngModel)]="dsaApplication.dateOfBirth"
+                readonly
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="nationality" class="form-label">Nationality</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nationality"
+                name="nationality"
+                [(ngModel)]="dsaApplication.firstName"
+                placeholder="Nationality"
+                readonly
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="contactNumber" class="form-label"
+                >Contact Number</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="contactNumber"
+                name="contactNumber"
+                [(ngModel)]="dsaApplication.contactNumber"
+                placeholder="Contact Number"
+                readonly
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="emailAddress" class="form-label">Email Address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="emailAddress"
+                name="emailAddress"
+                [(ngModel)]="dsaApplication.emailAddress"
+                placeholder="Email Address"
+                readonly
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="streetAddress" class="form-label"
+                >Street Address</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="streetAddress"
+                name="streetAddress"
+                [(ngModel)]="dsaApplication.streetAddress"
+                placeholder="Street Address"
+                readonly
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <label for="city" class="form-label">City</label>
+              <input
+                type="text"
+                class="form-control"
+                id="city"
+                name="city"
+                [(ngModel)]="dsaApplication.city"
+                placeholder="City"
+                readonly
+              />
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="state" class="form-label">State</label>
+              <input
+                type="text"
+                class="form-control"
+                id="state"
+                name="state"
+                [(ngModel)]="dsaApplication.state"
+                placeholder="State"
+                readonly
+              />
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="postalCode" class="form-label">Postal Code</label>
+              <input
+                type="text"
+                class="form-control"
+                id="postalCode"
+                name="postalCode"
+                [(ngModel)]="dsaApplication.postalCode"
+                placeholder="Postal Code"
+                readonly
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="country" class="form-label">Country</label>
+              <input
+                type="text"
+                class="form-control"
+                id="country"
+                name="country"
+                [(ngModel)]="dsaApplication.country"
+                placeholder="Country"
+                readonly
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="preferredLanguage" class="form-label"
+                >Preferred Language</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="preferredLanguage"
+                name="preferredLanguage"
+                [(ngModel)]="dsaApplication.preferredLanguage"
+                placeholder="Preferred Language"
+                readonly
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="form-header">Professional Information</div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="educationalQualifications" class="form-label"
+                >Educational Qualifications</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="educationalQualifications"
+                name="educationalQualifications"
+                [(ngModel)]="dsaApplication.educationalQualifications"
+                placeholder="Educational Qualifications"
+                readonly
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="experience" class="form-label">Experience</label>
+              <input
+                type="text"
+                class="form-control"
+                id="experience"
+                name="experience"
+                [(ngModel)]="dsaApplication.experience"
+                placeholder="Experience"
+                readonly
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="isAssociatedWithOtherDSA" class="form-label"
+                >Associated with Other DSA</label
+              >
+              <select
+                class="form-select"
+                id="isAssociatedWithOtherDSA"
+                disabled
+              >
+                <option>{{dsaApplication.isAssociatedWithOtherDSA}}</option>
+
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="associatedInstitutionName" class="form-label"
+                >Associated Institution Name</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="associatedInstitutionName"
+                name="associatedInstitutionName"
+                [(ngModel)]="dsaApplication.associatedInstitutionName"
+                placeholder="Associated Institution Name"
+                readonly
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="referralSource" class="form-label"
+                >Referral Source</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="referralSource"
+                name="referralSource"
+                [(ngModel)]="dsaApplication.referralSource"
+                placeholder="Referral Source"
+                readonly
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="status" class="form-label">Status</label>
+              <input
+                type="text"
+                class="form-control"
+                id="status"
+                name="status"
+                [(ngModel)]="dsaApplication.approvalStatus"
+                placeholder="Status"
+                readonly
+              />
+            </div>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="userProfileForm.invalid || !userProfile.dsaApplicationId"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 60 60">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#6c87fc"/>
+      <stop offset="1" stop-color="#425cfa"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#27669c"/>
+      <stop offset="1" stop-color="#4698d1"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <ellipse id="Ellipse_234" data-name="Ellipse 234" cx="28.5" cy="29" rx="28.5" ry="29" transform="translate(-0.221 -0.452)" fill="url(#linear-gradient)"/>
+    </clipPath>
+  </defs>
+  <g id="Group_7171" data-name="Group 7171" transform="translate(-1906 -250)">
+    <g id="Group_7152" data-name="Group 7152" transform="translate(864 -3843)">
+      <g id="Group_6707" data-name="Group 6707" transform="translate(261 381)">
+        <g id="Group_3618" data-name="Group 3618" transform="translate(780.585 3711.817)">
+          <g id="Group_3616" data-name="Group 3616" transform="translate(0 0)">
+            <circle id="Ellipse_213" data-name="Ellipse 213" cx="30" cy="30" r="30" transform="translate(0.415 0.183)" fill="url(#linear-gradient-2)"/>
+          </g>
+          <g id="Mask_Group_55" data-name="Mask Group 55" transform="translate(2.135 1.835)" opacity="0.11" clip-path="url(#clip-path)">
+            <path id="Union_18" data-name="Union 18" d="M31.409,46.27,14.86,62.818,0,47.958,16.548,31.409,0,14.861,14.86,0,31.409,16.549,47.958,0,62.819,14.861,46.27,31.409,62.819,47.958,47.958,62.818Z" transform="translate(-3.068 -2.759)" fill="#fff"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="noun_Low_Interest_Rate_370710_1_" data-name="noun_Low Interest Rate_370710 (1)" transform="translate(1914.711 253.226)">
+      <path id="Path_14713" data-name="Path 14713" d="M32.79,20.566a2.873,2.873,0,1,0-2.873-2.873A2.876,2.876,0,0,0,32.79,20.566Zm0-4.056a1.183,1.183,0,1,1-1.183,1.183A1.184,1.184,0,0,1,32.79,16.51Z" transform="translate(-16.072 -0.03)" fill="#fff" stroke="#fff" stroke-width="0.5"/>
+      <path id="Path_14714" data-name="Path 14714" d="M52.57,36.972A2.873,2.873,0,1,0,55.443,34.1,2.876,2.876,0,0,0,52.57,36.972Zm2.873-1.183a1.183,1.183,0,1,1-1.183,1.183A1.184,1.184,0,0,1,55.443,35.789Z" transform="translate(-30.856 -12.611)" fill="#fff" stroke="#fff" stroke-width="0.5"/>
+      <rect id="Rectangle_1372" data-name="Rectangle 1372" width="13.104" height="1.69" transform="translate(16.966 26.495) rotate(-63.435)" fill="#fff" stroke="#fff" stroke-width="0.5"/>
+      <path id="Path_14715" data-name="Path 14715" d="M36.308,27.307a.845.845,0,0,0-.8-.571H31.29V18.372H29.6v9.209a.845.845,0,0,0,.845.845h2.6L20.659,38.039l-12.1-9.613H11.2a.845.845,0,0,0,.845-.845V15.86h-1.69V26.736H6.134a.845.845,0,0,0-.526,1.507L20.127,39.775a.845.845,0,0,0,1.044.006L36.027,28.249A.845.845,0,0,0,36.308,27.307Z" transform="translate(0 -0.709)" fill="#fff" stroke="#fff" stroke-width="0.5"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,186 @@
+<div class="container scrollable-form">
+  <h2 class="text-center my-4">Home Loan EMI Calculator</h2>
+  <div class="row">
+    <div>
+      Home Loan EMI calculator is a basic calculator that helps you to calculate
+      the EMI, monthly interest and monthly reducing balance on the basis of
+      principal amount, loan tenure and interest rate
+    </div>
+  </div>
+  <div class="row">
+    <!-- Inputs Column -->
+    <div class="col-md-7">
+      <form (ngSubmit)="calculateEMI()" #emiForm="ngForm">
+        <div class="form-group">
+          <label for="loanAmount">Home Loan Amount</label>
+          <div class="range-container">
+            <div class="d-flex justify-content-between">
+              <span>₹1 L</span>
+              <span>₹5 Cr</span>
+            </div>
+            <input
+              type="range"
+              id="loanAmountRange"
+              name="loanAmountRange"
+              [(ngModel)]="loanAmount"
+              (ngModelChange)="calculateEMI()"
+              class="form-control-range"
+              min="100000"
+              max="50000000"
+              step="10000"
+              required
+            />
+            <input
+              type="number"
+              id="loanAmount"
+              name="loanAmount"
+              [(ngModel)]="loanAmount"
+              (ngModelChange)="calculateEMI()"
+              class="form-control"
+              min="100000"
+              max="10000000"
+              step="10000"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="loanTenure">Loan Tenure (Years)</label>
+          <div class="range-container">
+            <div class="d-flex justify-content-between">
+              <span>1</span>
+              <span>30 Y</span>
+            </div>
+            <input
+              type="range"
+              id="loanTenureRange"
+              name="loanTenureRange"
+              [(ngModel)]="loanTenure"
+              (ngModelChange)="calculateEMI()"
+              class="form-control-range"
+              min="1"
+              max="30"
+              step="1"
+              required
+            />
+            <input
+              type="number"
+              id="loanTenure"
+              name="loanTenure"
+              [(ngModel)]="loanTenure"
+              (ngModelChange)="calculateEMI()"
+              class="form-control"
+              min="0.1"
+              max="30"
+              step="1"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="interestRate">Interest Rate (%)</label>
+          <div class="range-container">
+            <div class="d-flex justify-content-between">
+              <span>1%</span>
+              <span>20%</span>
+            </div>
+            <input
+              type="range"
+              id="interestRateRange"
+              name="interestRateRange"
+              [(ngModel)]="interestRate"
+              (ngModelChange)="calculateEMI()"
+              class="form-control-range"
+              min="1"
+              max="20"
+              step="0.1"
+              required
+            />
+            <input
+              type="number"
+              id="interestRate"
+              name="interestRate"
+              [(ngModel)]="interestRate"
+              (ngModelChange)="calculateEMI()"
+              class="form-control"
+              min="1"
+              max="20"
+              step="0.1"
+              required
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Result Column -->
+    <div class="col-md-5 d-flex flex-column align-items-start">
+      <div class="result w-100 mb-4">
+        <div class="text-center">
+          <div class="result-item">
+            <h4>Total EMI:</h4>
+            <p>{{ emiResult | currency : "INR" : "symbol" }}</p>
+          </div>
+          <div class="result-item">
+            <h4>Total Interest Payable:</h4>
+            <p>{{ totalInterestPayable | currency : "INR" : "symbol" }}</p>
+          </div>
+          <div class="result-item">
+            <h4>Total Payments Made:</h4>
+            <p>{{ totalPaymentsMade | currency : "INR" : "symbol" }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ApexChart -->
+      <div class="w-100">
+        <apx-chart
+          [series]="chartSeries"
+          [chart]="chartOptions.chart"
+          [labels]="chartOptions.labels"
+          [title]="chartOptions.title"
+          class="apex-charts"
+        >
+        </apx-chart>
+      </div>
+    </div>
+  </div>
+  <div class="w-100 d-flex justify-content-start mb-3">
+    <button (click)="downloadPDF()" class="btn btn-primary mr-2">Download PDF</button>
+    <button (click)="downloadCSV()" class="btn btn-info">Download CSV</button>
+
+  </div>
+
+
+  <!-- Table Section -->
+  <div class="row">
+    <div class="w-100">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th>Beginning Balance</th>
+            <th>EMI</th>
+            <th>Principal</th>
+            <th>Monthly Interest</th>
+            <th>Outstanding Balance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of breakdown">
+            <td>{{ item.month }}</td>
+            <td>{{ item.beginningBalance | currency : "INR" : "symbol" }}</td>
+            <td>{{ item.emi | currency : "INR" : "symbol" }}</td>
+            <td>{{ item.principal | currency : "INR" : "symbol" }}</td>
+            <td>{{ item.interest | currency : "INR" : "symbol" }}</td>
+            <td>{{ item.outstandingBalance | currency : "INR" : "symbol" }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+</div>
