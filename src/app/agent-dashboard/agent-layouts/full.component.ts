@@ -2,20 +2,20 @@ import { CommonModule } from "@angular/common";
 import { Component, OnInit, HostListener } from "@angular/core";
 import { Router, RouterModule } from "@angular/router";
 import { NgbCollapseModule } from "@ng-bootstrap/ng-bootstrap";
-import { AdminSidebarComponent } from "../shared/sidebar/sidebar.component";
-import { AdminNavigationComponent } from "../shared/header/navigation.component";
+import { AgentSidebarComponent } from "../shared/sidebar/sidebar.component";
+import { AgentNavigationComponent } from "../shared/header/navigation.component";
 
 
 //declare var $: any;
 
 @Component({
-  selector: "app-admin-full-layout",
+  selector: "app-agent-full-layout",
   standalone: true,
-  imports:[RouterModule, AdminSidebarComponent, AdminNavigationComponent, CommonModule, NgbCollapseModule],
+  imports:[RouterModule, AgentSidebarComponent, AgentNavigationComponent, CommonModule, NgbCollapseModule],
   templateUrl: "./full.component.html",
   styleUrls: ["./full.component.scss"],
 })
-export class AdminFullComponent implements OnInit {
+export class AgentFullComponent implements OnInit {
 
   constructor(public router: Router) {}
   public isCollapsed = false;
@@ -31,7 +31,7 @@ export class AdminFullComponent implements OnInit {
 
   ngOnInit() {
     if (this.router.url === "/") {
-      this.router.navigate(["/admin-dashboard"]);
+      this.router.navigate(["/agent-dashboard"]);
     }
     this.defaultSidebar = this.sidebartype;
     this.handleSidebar();

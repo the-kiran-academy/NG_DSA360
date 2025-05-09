@@ -8,10 +8,10 @@ import { AllDsaApplicationComponent } from '../admin-subadmin-components/all-dsa
 import { CreateNewProfileComponent } from './create-new-profile/create-new-profile.component';
 import { AllProfilesComponent } from './all-profiles/all-profiles.component';
 import { AllSystemUserKycComponent } from '../admin-subadmin-components/all-system-user-kyc/all-system-user-kyc.component';
-import { HomeEmiCalculatorComponent } from './home-emi-calculator/home-emi-calculator.component';
-import { BussinessEmiCalculatorComponent } from './bussiness-emi-calculator/bussiness-emi-calculator.component';
-import { PersonalEmiCalculatorComponent } from './personal-emi-calculator/personal-emi-calculator.component';
-import { CarEmiCalculatorComponent } from './car-emi-calculator/car-emi-calculator.component';
+import { HomeEmiCalculatorComponent } from '../component/home-emi-calculator/home-emi-calculator.component';
+import { BussinessEmiCalculatorComponent } from '../component/bussiness-emi-calculator/bussiness-emi-calculator.component';
+import { PersonalEmiCalculatorComponent } from '../component/personal-emi-calculator/personal-emi-calculator.component';
+import { CarEmiCalculatorComponent } from '../component/car-emi-calculator/car-emi-calculator.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { AccountSettingComponent } from './account-setting/account-setting.component';
 import { DsaApplicationComponent } from '../admin-subadmin-components/dsa-application/dsa-application.component';
@@ -66,26 +66,7 @@ export const ComponentsRoutes: Routes = [
         component: AllSystemUserKycComponent,
       },
 
-      //loan
-      {
-        path: 'home-loan-calculator',
-        component: HomeEmiCalculatorComponent,
-      },
 
-      {
-        path: 'bussiness-loan-calculator',
-        component: BussinessEmiCalculatorComponent,
-      },
-
-      {
-        path: 'personal-loan-calculator',
-        component: PersonalEmiCalculatorComponent,
-      },
-
-      {
-        path: 'car-loan-calculator',
-        component: CarEmiCalculatorComponent,
-      },
 
       //my profile
       {

@@ -11,6 +11,11 @@ import { ServerErrorComponent } from './component/server-error/server-error.comp
 import { WelcomeComponent } from './component/welcome/welcome.component';
 import { DsaKycComponent } from './component/dsa-kyc/dsa-kyc.component';
 import { DsaRegisterationComponent } from './component/dsa-registration/dsa-registration.component';
+import { AgentFullComponent } from './agent-dashboard/agent-layouts/full.component';
+import { HomeEmiCalculatorComponent } from './component/home-emi-calculator/home-emi-calculator.component';
+import { BussinessEmiCalculatorComponent } from './component/bussiness-emi-calculator/bussiness-emi-calculator.component';
+import { PersonalEmiCalculatorComponent } from './component/personal-emi-calculator/personal-emi-calculator.component';
+import { CarEmiCalculatorComponent } from './component/car-emi-calculator/car-emi-calculator.component';
 
 export const Approutes: Routes = [
   { path: '', redirectTo: '/welcome', pathMatch: 'full' }, // Default route
@@ -19,7 +24,7 @@ export const Approutes: Routes = [
 
   { path: 'dsa-registeration', component: DsaRegisterationComponent },
   {
-    path:"dsa-kyc/:dsaId",component:DsaKycComponent
+    path: "dsa-kyc/:dsaId", component: DsaKycComponent
   },
   { path: '88a9f70f48d1', component: ServerDownComponent },
   { path: 'server-error', component: ServerErrorComponent },
@@ -80,6 +85,57 @@ export const Approutes: Routes = [
       },
     ],
   },
+
+  {
+    path: 'agent-dashboard',
+    component: AgentFullComponent,
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./agent-dashboard/agent-dashboard.module').then(
+            (m) => m.AgentDashboardModule
+          ),
+      },
+      {
+        path: 'about',
+        loadChildren: () =>
+          import('./about/about.module').then((m) => m.AboutModule),
+      },
+      {
+        path: 'component',
+        loadChildren: () =>
+          import('./agent-component/component.module').then(
+            (m) => m.AgentComponentsModule
+          ),
+      },
+    ],
+  },
+
+
+
+  //loan
+  {
+    path: 'home-loan-calculator',
+    component: HomeEmiCalculatorComponent,
+  },
+
+  {
+    path: 'bussiness-loan-calculator',
+    component: BussinessEmiCalculatorComponent,
+  },
+
+  {
+    path: 'personal-loan-calculator',
+    component: PersonalEmiCalculatorComponent,
+  },
+
+  {
+    path: 'car-loan-calculator',
+    component: CarEmiCalculatorComponent,
+  },
+
   { path: '3d2bb411-e663', component: ErrorPageComponent },
   { path: '**', redirectTo: '/3d2bb411-e663' },
 ];

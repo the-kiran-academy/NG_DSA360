@@ -1,45 +1,44 @@
+const baseUrl = 'http://localhost:8091';
+
 export const AppUrls = {
-  loginUrl: 'http://localhost:8091/auth/login-user',
+  loginUrl: `${baseUrl}/auth/login-user`,
 
-  //admin
-  allRolesUrl: 'http://localhost:8091/admin/get-all-roles',
-  addRoleUrl: 'http://localhost:8091/admin/add-role',
-  allRegionsUrl: 'http://localhost:8091/admin/get-all-regions',
-  addRegionUrl: 'http://localhost:8091/admin/add-region',
+  // admin
+  allRolesUrl: `${baseUrl}/admin/get-all-roles`,
+  addRoleUrl: `${baseUrl}/admin/add-role`,
+  allRegionsUrl: `${baseUrl}/admin/get-all-regions`,
+  addRegionUrl: `${baseUrl}/admin/add-region`,
+  createUserProfile: `${baseUrl}/admin/create-user-profile`,
 
-  createUserProfile: 'http://localhost:8091/admin/create-user-profile',
+  // dsa application
+  dsaApplication: `${baseUrl}/public/dsa-application`,
+  allDsaApplicationUrl: `${baseUrl}/sub-admin/get-all-dsa-application`,
+  allDsaApplicationIdsUrl: `${baseUrl}/admin/get-all-dsa-ids`,
+  getDsaApplication: `${baseUrl}/sub-admin/get-dsa-application-by-id`,
+  emailVerification: `${baseUrl}/sub-admin/email-verification-request`,
 
-  //dsa application
+  // system user
+  myProfileApiUrl: `${baseUrl}/system-user/get-user-by-username`,
+  allUserUrl: `${baseUrl}/system-user/get-all-user`,
+  getSystemUserUrl: `${baseUrl}/system-user/get-user-by-username`,
 
-  dsaApplication:'http://localhost:8091/public/dsa-application',
+  // kyc
+  allDsaKyc: `${baseUrl}/sub-admin/get-all-kycs`,
+  getKycByDsaId: `${baseUrl}/sub-admin/get-kyc-by-dsaId`,
+  approvalNotification: `${baseUrl}/sub-admin/notify-approval-status`,
+  dsaKyc: `${baseUrl}/public/syatem-user-kyc`,
 
-  allDsaApplicationUrl:
-    'http://localhost:8091/sub-admin/get-all-dsa-application',
+  // loan
+  createLoanCondition: `${baseUrl}/admin/loan-condition/add`,
 
-  allDsaApplicationIdsUrl: 'http://localhost:8091/admin/get-all-dsa-ids',
+  // contact us
+  contactUs: `${baseUrl}/public/contact-us`,
 
-  getDsaApplication: 'http://localhost:8091/sub-admin/get-dsa-application-by-id',
+  // metrics
+  dsaUserMetrics: `${baseUrl}/admin/metrics/all`,
 
-  emailVerification:
-    'http://localhost:8091/sub-admin/email-verification-request',
+  agentCustomers: `${baseUrl}/agent/customers/dsa`,
+  uploadDocument:  `${baseUrl}/agent/documents/upload`,
+  applyForLoan:`${baseUrl}/agent/customer-loan-application`
 
-  //system user
-  myProfileApiUrl: 'http://localhost:8091/system-user/get-user-by-username',
-
-  allUserUrl: 'http://localhost:8091/system-user/get-all-user',
-
-  getSystemUserUrl: 'http://localhost:8091/system-user/get-user-by-username',
-
-  //kyc
-  allDsaKyc: 'http://localhost:8091/sub-admin/get-all-kycs',
-
-  getKycByDsaId: 'http://localhost:8091/sub-admin/get-kyc-by-dsaId',
-
-  approvalNotification:
-    'http://localhost:8091/sub-admin/notify-approval-status',
-
-  dsaKyc: 'http://localhost:8091/public/syatem-user-kyc',
-
-  //loan
-  createLoanCondition: 'http://localhost:8091/admin/loan-condition/add',
 };

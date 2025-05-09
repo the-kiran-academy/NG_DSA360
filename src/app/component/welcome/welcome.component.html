@@ -1087,7 +1087,7 @@
                   <p>+91- 7020192726</p>
                 </a>
                 <a
-                  href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=support@choiceconnect.in"
+                  href="#"
                   target="_blank"
                   class="d-flex pb-3 align-item-start"
                   rel="noopener"
@@ -1101,7 +1101,7 @@
               </div>
               <div class="social-icon d-flex pt-3 ml-5">
                 <a
-                  href="https://www.youtube.com/channel/UCy3RBk3rrAq3T3sJv_k9jJQ?view_as=subscriber%3Fsub_confirmation%3D1"
+                  href="#"
                   target="_blank"
                   rel="noopener"
                   ><img
@@ -1110,7 +1110,7 @@
                     alt="Subscribe to DSA 360 Solution on YouTube"
                 /></a>
                 <a
-                  href="https://www.facebook.com/ChoiceConnectOfficial"
+                  href="#"
                   target="_blank"
                   rel="noopener"
                   ><img
@@ -1119,7 +1119,7 @@
                     alt="Follow DSA 360 Solution on Facebook"
                 /></a>
                 <a
-                  href="https://twitter.com/choiceconnect1"
+                  href="#"
                   target="_blank"
                   rel="noopener"
                   ><img
@@ -1128,7 +1128,7 @@
                     alt="Follow DSA 360 Solution on Twitter"
                 /></a>
                 <a
-                  href="https://www.instagram.com/choice_connect_official/"
+                  href="#"
                   target="_blank"
                   rel="noopener"
                   ><img
@@ -1140,18 +1140,15 @@
             </div>
             <div class="col-md-8 col-sm-12 getin-w" style="display: block">
               <h6>Get in touch</h6>
-              <form id="contact-us" method="POST" action="">
+              <form id="contact-us">
                 <div class="row">
-                  <input
-                    type="hidden"
-                    name="_token"
-                    value="CyYi6SJWBAqj7BOeiZ2HBzN6LYA2Yvacv9A7TtML"
-                  />
+
                   <div class="col-md-4">
                     <div class="form-group">
                       <input
                         type="text"
                         name="name"
+                        [(ngModel)]="contact.name"
                         class="form-control"
                         placeholder="Name*"
                       />
@@ -1163,6 +1160,7 @@
                       <input
                         type="tel"
                         name="mobile_number"
+                        [(ngModel)]="contact.mobile_number"
                         class="form-control"
                         placeholder="Mobile No.*"
                       />
@@ -1174,6 +1172,7 @@
                       <input
                         type="email"
                         name="email"
+                        [(ngModel)]="contact.email"
                         class="form-control"
                         placeholder="Email ID*"
                       />
@@ -1184,26 +1183,16 @@
                     <div class="form-group">
                       <textarea
                         name="message"
+                        [(ngModel)]="contact.message"
                         class="form-control"
                         placeholder="Message"
                       ></textarea>
                     </div>
                   </div>
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <div class="g-recaptcha" data-sitekey=""></div>
-                      <input
-                        class="form-control d-none"
-                        data-recaptcha="true"
-                        required=""
-                        data-error="Please complete the Captcha"
-                      />
-                      <div class="help-block with-errors"></div>
-                    </div>
-                  </div>
+
                   <div class="margin-left-auto col-md-3">
-                    <button class="btn btn-outline" type="submit">
-                      GET STARTED
+                    <button (click)="contactUs()" class="btn btn-outline" type="submit">
+                      SUBMIT
                     </button>
                   </div>
                 </div>

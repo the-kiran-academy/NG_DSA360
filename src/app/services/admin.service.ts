@@ -11,6 +11,7 @@ export class AdminService {
 
   getAllRoles(): Observable<any> {
     return this.http.get<any>(AppUrls.allRolesUrl);
+
   }
 
   getAllRegions(): Observable<any> {

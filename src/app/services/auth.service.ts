@@ -34,10 +34,12 @@ export class AuthService {
 
   private handleLoginResponse(response: any): void {
     const token = response.token;
+    const id=response.id;
 
     if (token) {
       localStorage.setItem('token', token);
       localStorage.setItem('username', this.username);
+      localStorage.setItem('id', id);
     } else {
       this.toastr.error('Facing TokenGenration Issues !');
     }

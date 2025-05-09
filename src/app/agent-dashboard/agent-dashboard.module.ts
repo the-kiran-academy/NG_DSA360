@@ -3,22 +3,21 @@ import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { Routes, RouterModule } from "@angular/router";
 import { NgApexchartsModule } from "ng-apexcharts";
-import { AdminDashboardComponent } from "./admin-dashboard.component";
-import { SalesSummaryComponent } from "./admin-dashboard-components/sales-summary/sales-summary.component";
-import { FeedsComponent } from "./admin-dashboard-components/feeds/feeds.component";
-import { TopSellingComponent } from "./admin-dashboard-components/top-selling/top-selling.component";
-import { TopCardsComponent } from "./admin-dashboard-components/top-cards/top-cards.component";
-import { BlogCardsComponent } from "./admin-dashboard-components/blog-cards/blog-cards.component";
+import { AgentDashboardComponent } from "./agent-dashboard.component";
+import { SalesSummaryComponent } from "./agent-dashboard-components/sales-summary/sales-summary.component";
+import { FeedsComponent } from "./agent-dashboard-components/feeds/feeds.component";
+import { TopSellingComponent } from "./agent-dashboard-components/top-selling/top-selling.component";
+import { TopCardsComponent } from "./agent-dashboard-components/top-cards/top-cards.component";
+import { BlogCardsComponent } from "./agent-dashboard-components/blog-cards/blog-cards.component";
 import { HttpClientModule } from "@angular/common/http";
-import { DsaApplicationComponent } from "../admin-subadmin-components/dsa-application/dsa-application.component";
 const routes: Routes = [
   {
     path: "",
     data: {
-      title: "Admin Dashboard",
-      urls: [{ title: "Admin Dashboard", url: "/admin-dashboard" }, { title: "Admin Dashboard" }],
+      title: "Agent Dashboard",
+      urls: [{ title: "Agent Dashboard", url: "/agent-dashboard" }, { title: "Agent Dashboard" }],
     },
-    component: AdminDashboardComponent,
+    component: AgentDashboardComponent,
   },
 
 ];
@@ -33,14 +32,13 @@ const routes: Routes = [
     NgApexchartsModule,
   ],
   declarations: [
-    AdminDashboardComponent,
+    AgentDashboardComponent,
     SalesSummaryComponent,
     FeedsComponent,
     TopSellingComponent,
     TopCardsComponent,
     BlogCardsComponent,
-    DsaApplicationComponent
   ],
 
 })
-export class AdminDashboardModule {}
+export class AgentDashboardModule {}

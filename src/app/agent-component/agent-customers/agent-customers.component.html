@@ -1,0 +1,304 @@
+<div class="card">
+  <div class="card-body">
+    <!-- Title -->
+    <h4 class="card-title">My Customers</h4>
+
+    <!-- Table -->
+    <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+      <table class="table table-striped align-middle">
+        <thead>
+          <tr>
+            <th class="text-dark font-medium fs-4">Id</th>
+            <th class="text-dark font-medium fs-4">Name</th>
+            <th class="text-dark font-medium fs-4">Mail</th>
+            <th class="text-dark font-medium fs-4">Loan Id</th>
+            <th colspan="2" class="text-dark font-medium fs-4">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let customer of customers">
+            <td>{{customer.id}}</td>
+            <td>{{ customer.name }}</td>
+            <td>{{ customer.email }}</td>
+            <td>
+              <ul *ngIf="(customer.loanApplications?.length ?? 0) > 0; else applyLoan">
+                <li *ngFor="let loan of customer.loanApplications">
+                  <a href="#" (click)="openLoanModal(loan)" data-bs-toggle="modal" data-bs-target="#loanModal">
+                    {{ loan.id }}
+                  </a>
+                </li>
+              </ul>
+              <ng-template #applyLoan>
+                <button class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#applyLoanModal"
+                  (click)="openLoanApplicationModal(customer.id)">
+                  Apply Loan
+                </button>
+              </ng-template>
+            </td>
+            <td>
+              <ng-container *ngIf="(customer.documents?.length ?? 0) > 0; else noDocuments">
+                <button class="btn btn-info" (click)="openDocumentModal(customer.documents, customer.id)"
+                  data-bs-toggle="modal" data-bs-target="#documentModal">
+                  <i class="bi bi-file-earmark-pdf"></i>
+                </button>
+              </ng-container>
+              <ng-template #noDocuments> NA </ng-template>
+            </td>
+
+            <td>
+              <button class="btn btn-primary" (click)="openUploadDocModal(customer.id)">
+                <i class="bi bi-file-arrow-up"></i>
+              </button>
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Document Modal -->
+<div class="modal fade" id="documentModal" tabindex="-1" aria-labelledby="documentModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Customer Documents</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row" *ngIf="selectedDocuments">
+          <div class="col-md-4 mb-3" *ngFor="let doc of selectedDocuments">
+            <div class="card">
+              <div class="card-body text-center">
+                <h4>{{ doc.documentType }}</h4>
+                <p>{{ doc.comment }}</p>
+                <a [href]="'/assets/images/customer/' + selectedCustomerId + '/' + doc.documentName" target="_blank">
+                  <img [src]="'/assets/images/customer/' + selectedCustomerId + '/' + doc.documentName"
+                    class="img-fluid rounded" alt="{{ doc.documentName }}" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Loan View Modal -->
+<div class="modal fade" id="loanModal" tabindex="-1" aria-labelledby="loanModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Loan Application Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" *ngIf="selectedLoan">
+        <form>
+          <div class="row mb-3">
+            <div class="col-md-3">
+              <label class="form-label fw-bold">Loan ID</label>
+              <div>{{ selectedLoan.id }}</div>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label fw-bold">Loan Amount</label>
+              <div>₹{{ selectedLoan.loanAmount }}</div>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label fw-bold">Loan Tenure</label>
+              <div>{{ selectedLoan.loanTenure }} months</div>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label fw-bold">Loan Purpose</label>
+              <div>{{ selectedLoan.loanPurpose }}</div>
+            </div>
+          </div>
+          <hr>
+          <div class="row mb-3">
+            <div class="col-md-3">
+              <label class="form-label fw-bold">Status</label>
+              <div>{{ selectedLoan.status }}</div>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label fw-bold">Interest Rate</label>
+              <div>{{ selectedLoan.interestRate }}%</div>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label fw-bold">EMI</label>
+              <div>₹{{ selectedLoan.emi }}</div>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label fw-bold">Application Date</label>
+              <div>{{ selectedLoan.applicationDate }}</div>
+            </div>
+          </div>
+          <hr>
+          <div class="row mb-3">
+            <div class="col-md-3">
+              <label class="form-label fw-bold">Payment Frequency</label>
+              <div>{{ selectedLoan.paymentFrequency }}</div>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label fw-bold">Income Details</label>
+              <div>{{ selectedLoan.incomeDetails }}</div>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label fw-bold">Employment Status</label>
+              <div>{{ selectedLoan.employmentStatus }}</div>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label fw-bold">Credit Score</label>
+              <div>{{ selectedLoan.creditScore }}</div>
+            </div>
+          </div>
+          <hr>
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label class="form-label fw-bold">Loan Purpose Description</label>
+              <div>{{ selectedLoan.loanPurposeDescription }}</div>
+            </div>
+            <div class="col-md-6" *ngIf="selectedLoan.rejectionReason">
+              <label class="form-label fw-bold">Rejection Reason</label>
+              <div>{{ selectedLoan.rejectionReason }}</div>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-3">
+              <label class="form-label fw-bold">Created At</label>
+              <div>{{ selectedLoan.createdAt }}</div>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label fw-bold">Updated At</label>
+              <div>{{ selectedLoan.updatedAt }}</div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Apply Loan Modal -->
+<div class="modal fade" id="applyLoanModal" tabindex="-1" aria-labelledby="loanApplicationModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Apply for Loan : {{loanApplication.customerId}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="submitLoanApplication()">
+          <div class="row">
+            <div class="col-md-3">
+              <label for="loanAmount">Loan Amount</label>
+              <input type="number" id="loanAmount" class="form-control" [(ngModel)]="loanApplication.loanAmount"
+                name="loanAmount" required>
+            </div>
+            <div class="col-md-3">
+              <label for="loanTenure">Loan Tenure</label>
+              <input type="number" id="loanTenure" class="form-control" [(ngModel)]="loanApplication.loanTenure"
+                name="loanTenure" required>
+            </div>
+            <div class="col-md-3">
+              <label for="interestRate">Interest Rate</label>
+              <input type="number" id="interestRate" class="form-control" [(ngModel)]="loanApplication.interestRate"
+                name="interestRate" required>
+            </div>
+            <div class="col-md-3">
+              <label for="emi">EMI</label>
+              <input type="number" id="emi" class="form-control" [(ngModel)]="loanApplication.emi" name="emi" required>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-3">
+              <label for="loanPurpose">Loan Purpose</label>
+              <input type="text" id="loanPurpose" class="form-control" [(ngModel)]="loanApplication.loanPurpose"
+                name="loanPurpose" required>
+            </div>
+
+            <div class="col-md-3">
+              <label for="paymentFrequency">Payment Frequency</label>
+              <input type="text" id="paymentFrequency" class="form-control"
+                [(ngModel)]="loanApplication.paymentFrequency" name="paymentFrequency" required>
+            </div>
+
+            <div class="col-md-3">
+              <label for="creditScore">Credit Score</label>
+              <input type="number" id="creditScore" class="form-control" [(ngModel)]="loanApplication.creditScore"
+                name="creditScore" required>
+            </div>
+            <div class="col-md-3">
+              <label for="employmentStatus">Employment Status</label>
+              <input type="text" id="employmentStatus" class="form-control"
+                [(ngModel)]="loanApplication.employmentStatus" name="employmentStatus" required>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-6">
+              <label for="incomeDetails">Income Details</label>
+              <textarea id="incomeDetails" class="form-control" [(ngModel)]="loanApplication.incomeDetails"
+                name="incomeDetails" rows="3" required></textarea>
+            </div>
+            <div class="col-md-6">
+              <label for="loanPurposeDescription">Loan Purpose Description</label>
+              <textarea id="loanPurposeDescription" class="form-control"
+                [(ngModel)]="loanApplication.loanPurposeDescription" name="loanPurposeDescription" rows="3"
+                required></textarea>
+            </div>
+          </div>
+          <hr>
+          <button type="submit" class="btn btn-primary">Submit Application</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Upload Document Modal -->
+<div *ngIf="selectedCustomerIdForDoc" class="modal d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.5);">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Upload Document : {{ selectedCustomerIdForDoc }}</h5>
+        <button type="button" class="btn-close" aria-label="Close" (click)="closeUploadDocModal()"></button>
+      </div>
+
+      <div class="modal-body">
+        <form [formGroup]="documentForm" (ngSubmit)="submitDocument()">
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label>Document Type</label>
+              <select class="form-select" formControlName="documentType" required>
+                <option *ngFor="let type of documentTypes" [value]="type">{{ type }}</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label>Upload File</label>
+              <input type="file" class="form-control" formControlName="file" (change)="onFileSelected($event)" required>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+
+            <div class="col-md-12">
+              <label>Comment</label>
+              <textarea class="form-control mt-2" formControlName="comment" rows="3"></textarea>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary" [disabled]="documentForm.invalid">Upload</button>
+            <button type="button" class="btn btn-secondary" (click)="closeUploadDocModal()">Cancel</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -23,18 +23,46 @@ export class DsaRegisterationComponent {
     this.currentYear = new Date().getFullYear();
 
     this.dsaApplication = this.fb.group({
-      firstName: ['', Validators.required],
-      middleName: ['', Validators.required],
-      lastName: ['', Validators.required],
+      firstName: ['', [Validators.required, Validators.minLength(3)]],
+      middleName: ['', [Validators.required, Validators.minLength(3)]],
+      lastName: ['', [Validators.required, Validators.minLength(3)]],
+      fatherName: ['', [Validators.required, Validators.minLength(3)]],
       gender: ['', Validators.required],
-      dateOfBirth: ['', Validators.required],
+      dateOfBirth: [
+      '',
+      [
+        Validators.required,
+        (control: { value: string | number | Date }) => {
+        const dateOfBirth = new Date(control.value);
+        const today = new Date();
+        const age = today.getFullYear() - dateOfBirth.getFullYear();
+        const isFutureDate = dateOfBirth > today;
+        const isUnderage = (() => {
+          const dob = new Date(control.value);
+          const minAgeDate = new Date(dob);
+          minAgeDate.setFullYear(dob.getFullYear() + 21);
+          return today < minAgeDate;
+        })();
+
+        return isFutureDate || isUnderage
+          ? { invalidDateOfBirth: true }
+          : null;
+        },
+      ],
+      ],
       nationality: ['', Validators.required],
-      contactNumber: ['', Validators.required],
+      contactNumber: [
+      '',
+      [Validators.required, Validators.pattern('^[1-9][0-9]{9}$')],
+      ],
       emailAddress: ['', [Validators.required, Validators.email]],
       streetAddress: ['', Validators.required],
       city: ['', Validators.required],
       state: ['', Validators.required],
-      postalCode: ['', Validators.required],
+      postalCode: [
+      '',
+      [Validators.required, Validators.pattern('^[0-9]{6}$')],
+      ],
       country: ['', Validators.required],
       preferredLanguage: ['', Validators.required],
       educationalQualifications: ['', Validators.required],
@@ -54,7 +82,7 @@ export class DsaRegisterationComponent {
       : false;
   }
 
-  apply() {
+  registerAsDsa() {
     if (this.dsaApplication.valid) {
       console.log(this.dsaApplication.value);
 

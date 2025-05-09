@@ -29,7 +29,7 @@
 </nav>
 
 <div class="container mt-2">
-  <form [formGroup]="dsaApplication" (ngSubmit)="apply()">
+  <form [formGroup]="dsaApplication" (ngSubmit)="registerAsDsa()">
     <div class="form-section">
       <div class="form-header">DSA Application Form</div>
       <div class="row">
@@ -76,14 +76,12 @@
       <div class="row">
         <div class="col-md-4 mb-3">
           <label for="gender" class="form-label">Gender</label>
-          <select
-            class="form-select"
-            id="gender"
-            formControlName="gender"
-          >
-            <option value="Male" selected>Male</option>
+          <select class="form-select" id="gender" formControlName="gender">
+            <option value="" disabled selected>Select Gender</option>
+            <option value="Male">Male</option>
             <option value="Female">Female</option>
           </select>
+
           <div *ngIf="dsaApplication.get('gender')?.invalid && dsaApplication.get('gender')?.touched" class="text-danger">
            Select Gender.
           </div>
@@ -96,9 +94,9 @@
             id="dateOfBirth"
             formControlName="dateOfBirth"
           />
-          <div *ngIf="dsaApplication.get('dateOfBirth')?.invalid && dsaApplication.get('dateOfBirth')?.touched" class="text-danger">
-            Date of Birth is required.
-          </div>
+            <div *ngIf="dsaApplication.get('dateOfBirth')?.invalid && dsaApplication.get('dateOfBirth')?.touched" class="text-danger">
+            Please provide a valid Date of Birth.
+            </div>
         </div>
         <div class="col-md-4 mb-3">
           <label for="emailAddress" class="form-label">Email Address</label>
@@ -138,7 +136,7 @@
             placeholder="Contact Number"
           />
           <div *ngIf="dsaApplication.get('contactNumber')?.invalid && dsaApplication.get('contactNumber')?.touched" class="text-danger">
-            Contact Number is required.
+            must be 10 digits and not start with 0 .
           </div>
         </div>
         <div class="col-md-4 mb-3">
@@ -207,18 +205,18 @@
             placeholder="Postal Code"
           />
           <div *ngIf="dsaApplication.get('postalCode')?.invalid && dsaApplication.get('postalCode')?.touched" class="text-danger">
-            Postal Code is required.
+            Postal Code is invalid.
           </div>
         </div>
         <div class="col-md-4 mb-3">
           <label for="country" class="form-label">Country</label>
-          <input
-            type="text"
-            class="form-control"
+          <select
+            class="form-select"
             id="country"
             formControlName="country"
-            placeholder="Country"
-          />
+          >
+            <option value="India" selected>India</option>
+          </select>
           <div *ngIf="dsaApplication.get('country')?.invalid && dsaApplication.get('country')?.touched" class="text-danger">
             Country is required.
           </div>
@@ -231,7 +229,18 @@
             id="preferredLanguage"
             formControlName="preferredLanguage"
             placeholder="Preferred Language"
+            list="languageOptions"
           />
+          <datalist id="languageOptions">
+            <option value="English"></option>
+            <option value="Hindi"></option>
+            <option value="Marathi"></option>
+            <option value="Tamil"></option>
+            <option value="Telugu"></option>
+            <option value="Bengali"></option>
+            <option value="Gujarati"></option>
+            <option value="Punjabi"></option>`
+          </datalist>
           <div *ngIf="dsaApplication.get('preferredLanguage')?.invalid && dsaApplication.get('preferredLanguage')?.touched" class="text-danger">
             Preferred Language is required.
           </div>
@@ -259,7 +268,20 @@
             id="experience"
             formControlName="experience"
             placeholder="Experience"
+            list="experienceOptions"
           />
+          <datalist id="experienceOptions">
+            <option value="1 years"></option>
+            <option value="2 years"></option>
+            <option value="10+ years"></option>
+            <option value="Fresher"></option>
+            <option value="Intern"></option>
+            <option value="Part-time"></option>
+            <option value="Full-time"></option>
+            <option value="Contract"></option>
+            <option value="Freelance"></option>
+            <option value="NA"></option>
+          </datalist>
           <div *ngIf="dsaApplication.get('experience')?.invalid && dsaApplication.get('experience')?.touched" class="text-danger">
             Experience is required.
           </div>
@@ -293,7 +315,11 @@
             Associated Institution Name is required.
           </div>
         </div>
-        <button class="btn btn-primary" type="submit">Submit Application</button>
+        <div class="text-center mt-4">
+          <button type="submit" class="btn btn-primary">
+            Submit Application
+          </button>
+        </div>
 
       </div>
     </div>

@@ -7,12 +7,12 @@ import { CommonModule, NgIf } from '@angular/common';
 //declare var $: any;
 
 @Component({
-  selector: 'app-admin-sidebar',
+  selector: 'app-agent-sidebar',
   standalone: true,
   imports:[RouterModule, CommonModule, NgIf],
   templateUrl: './sidebar.component.html'
 })
-export class AdminSidebarComponent implements OnInit {
+export class AgentSidebarComponent implements OnInit {
   showMenu = '';
   showSubMenu = '';
   public sidebarnavItems:RouteInfo[]=[];

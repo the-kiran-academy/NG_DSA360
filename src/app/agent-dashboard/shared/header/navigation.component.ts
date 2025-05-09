@@ -3,7 +3,6 @@ import { NgbDropdownModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { SystemUserService } from 'src/app/services/system-user.service';
-import { MyProfileComponent } from '../../../admin-component/my-profile/my-profile.component';
 
 declare var $: any;
 
@@ -13,7 +12,7 @@ declare var $: any;
   imports: [NgbDropdownModule, RouterModule],
   templateUrl: './navigation.component.html',
 })
-export class AdminNavigationComponent implements AfterViewInit {
+export class AgentNavigationComponent implements AfterViewInit {
   userProfile: any;
 
   loggedInUserName: string | null = null;
@@ -28,7 +27,7 @@ export class AdminNavigationComponent implements AfterViewInit {
   }
 
   onMyProfileClick(username: any): void {
-    this.router.navigate(['/admin-dashboard/component/my-profile', username]);
+    this.router.navigate(['/agent-dashboard/component/my-profile', username]);
   }
 
   logout() {

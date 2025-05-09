@@ -50,7 +50,8 @@ import { DsaRegisterationComponent } from './component/dsa-registration/dsa-regi
     SystemUserKycComponent,
     WelcomeComponent,
     DsaKycComponent,
-    DsaRegisterationComponent
+    DsaRegisterationComponent,
+
   ],
   imports: [
     CommonModule,

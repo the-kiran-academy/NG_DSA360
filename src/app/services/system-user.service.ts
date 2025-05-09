@@ -18,4 +18,12 @@ export class SystemUserService {
 
     return this.http.get<any>(url);
   }
+
+  dsaUserMetrics(): Observable<any> {
+    const url = `${AppUrls.dsaUserMetrics}`;
+    return this.http.get<any>(url);
+
+  }
+
+
 }

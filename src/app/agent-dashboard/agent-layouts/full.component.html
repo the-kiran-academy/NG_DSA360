@@ -33,7 +33,7 @@
         <!-- ============================================================== -->
         <!-- Logo -->
         <!-- ============================================================== -->
-        <a class="navbar-brand" [routerLink]="['/admin-dashboard']">
+        <a class="navbar-brand" [routerLink]="['/agent-dashboard']">
           <!-- Logo icon -->
           <b class="logo-icon">
             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
@@ -100,7 +100,7 @@
     (mouseover)="Logo()"
     (mouseout)="Logo()"
   >
-      <app-admin-sidebar></app-admin-sidebar>
+      <app-agent-sidebar></app-agent-sidebar>
   </aside>
   <!-- ============================================================== -->
   <!-- End Left Sidebar - style you can find in sidebar.scss  -->
@@ -129,7 +129,7 @@
     <!-- ============================================================== -->
     <footer class="footer text-center">
       All Rights Reserved by
-      <a [routerLink]="['/admin-dashboard']">DSA360</a>.
+      <a [routerLink]="['/agent-dashboard']">DSA360</a>.
     </footer>
     <!-- ============================================================== -->
     <!-- End footer -->

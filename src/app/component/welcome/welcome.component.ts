@@ -1,15 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { CustomerService } from 'src/app/services/customer.service';
 
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.scss']
 })
-export class WelcomeComponent implements OnInit{
+export class WelcomeComponent implements OnInit {
+
+  constructor(private customerService: CustomerService, private toastr: ToastrService) { }
+  contact = {
+    name: '',
+    email: '',
+    mobile_number: '',
+    message: ''
+  }
+
   currentYear: number = new Date().getFullYear();
   ngOnInit(): void {
-   localStorage.clear();
+    localStorage.clear();
   }
 
   faqs = [
@@ -33,6 +44,25 @@ export class WelcomeComponent implements OnInit{
     this.faqs.forEach(faq => {
       faq.isOpen = faq === selectedFaq ? !faq.isOpen : false;
     });
+  }
+
+  contactUs() {
+    console.log(this.contact);
+
+    this.customerService.contactUs(this.contact).subscribe((response) => {
+      console.log("ress",response);
+
+      this.toastr.success("Your message has been sent successfully");
+      // Reset the form after successful submission
+
+      this.contact = {
+        name: '',
+        email: '',
+        mobile_number: '',
+        message: ''
+      };
+    });
+
   }
 
 }
